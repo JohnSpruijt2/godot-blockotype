@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://b0vwtxk7tcdpf"]
+
+[ext_resource type="Script" uid="uid://b5k5x1pvj2tam" path="res://car.gd" id="1_7822p"]
+[ext_resource type="Script" uid="uid://wvqnk7k5l5dh" path="res://SwingingCarDoor.gd" id="2_k61xc"]
+[ext_resource type="Script" uid="uid://dnbw1ul5roid1" path="res://player_two.gd" id="2_uoj53"]
+[ext_resource type="Script" uid="uid://d0r1txcb33hln" path="res://MirrorCamera.gd" id="4_06lh1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
+albedo_color = Color(0.36862746, 1, 0.4627451, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_06lh1"]
+albedo_color = Color(0.36862746, 1, 0.84313726, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k61xc"]
+albedo_color = Color(0.61960787, 0.64705884, 0.6901961, 1)
+metallic = 1.0
+roughness = 0.45
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
+size = Vector3(2.72023, 3.8168945, 7.5041924)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
+albedo_color = Color(0.08235294, 0.101960786, 0.14509805, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uoj53"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdgfv"]
+albedo_color = Color(0.2, 0.17254902, 1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w1ycj"]
+spread = 180.0
+initial_velocity_max = 16.13
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_titi6"]
+albedo_color = Color(0.7866696, 0.006842027, 7.70092e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gmxvo"]
+material = SubResource("StandardMaterial3D_titi6")
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="Skin" id="Skin_jdgfv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmxvo"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 0.15
+roughness = 0.0
+
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1787123677 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.118517, 0)
+center_of_mass_mode = 1
+script = ExtResource("1_7822p")
+max_rpm = 600
+max_torque = 450
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2138313278]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+size = Vector3(8.530151, 1, 2.8409424)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=1930778521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64995, 1.7179093, -1.3267049)
+size = Vector3(5.149658, 2.5810547, 0.18758988)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=1894790405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64995, 1.7179093, 1.2846891)
+size = Vector3(5.149658, 2.5810547, 0.18758988)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D" unique_id=663499944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64995, 3.0283089, -0.015280652)
+size = Vector3(5.149658, 0.13134766, 2.8167477)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D" unique_id=879177309]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 1.2230157, 1.8363438, -0.042077515)
+size = Vector3(2.2949524, 1.404541, 2.7325926)
+material = SubResource("StandardMaterial3D_06lh1")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D" unique_id=963881704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2690299, 1.457005, -0.015280789)
+size = Vector3(1.8599243, 0.13134766, 2.8167477)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D" unique_id=625877814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2077713, 0.99521303, -0.0152807925)
+size = Vector3(0.14578247, 1.0549316, 2.8167477)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D" unique_id=1029131530]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4999595, 0.94089174, -1.3638775)
+size = Vector3(0.14578247, 0.94628906, 3.3351316)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D" unique_id=1088833713]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4999595, 0.94089174, 1.343836)
+size = Vector3(0.14578247, 0.94628906, 3.3351316)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="Door left hinge" type="Node3D" parent="CSGBox3D" unique_id=482998971]
+transform = Transform3D(0.75871116, 0, -0.6514272, 0, 1, 0, 0.6514272, 0, 0.75871116, -4.168749, 1.7925868, -1.4355063)
+
+[node name="DoorLeft" type="Node3D" parent="CSGBox3D/Door left hinge" unique_id=1374441974]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)
+script = ExtResource("2_k61xc")
+max_angle = 120.0
+min_angle = -150.0
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D/Door left hinge/DoorLeft" unique_id=1913513913]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -0.6935015, 0, 0.032850266)
+size = Vector3(1.3911133, 2.6065063, 0.16357422)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/Door left hinge/DoorLeft/CSGBox3D9" unique_id=414604122]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -0.8291807, 0.18271637, -0.0077017546)
+size = Vector3(1, 0.013168335, 0.13550568)
+material = SubResource("StandardMaterial3D_k61xc")
+
+[node name="Door Right hinge" type="Node3D" parent="CSGBox3D" unique_id=53420832]
+transform = Transform3D(0.45440626, 0, 0.8907947, 0, 1, 0, -0.8907947, 0, 0.45440626, -4.168749, 1.7925868, 1.37993)
+
+[node name="DoorRight" type="Node3D" parent="CSGBox3D/Door Right hinge" unique_id=352238909]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)
+script = ExtResource("2_k61xc")
+max_angle = 110.0
+min_angle = -150.0
+rightDoor = true
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D/Door Right hinge/DoorRight" unique_id=440329615]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -0.6935015, 0, 0.032850266)
+size = Vector3(1.3911133, 2.6065063, 0.16357422)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/Door Right hinge/DoorRight/CSGBox3D9" unique_id=330253573]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -0.8291807, 0.18271637, -0.0077017546)
+size = Vector3(1, 0.013168335, 0.13550568)
+material = SubResource("StandardMaterial3D_k61xc")
+
+[node name="CenterMirrorPosition" type="Node3D" parent="CSGBox3D" unique_id=123173797]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.941516, 0.84097695, 4.1154962e-08)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2131124542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019874573, 1.1450195, 0.18362617)
+shape = SubResource("BoxShape3D_a0tk4")
+
+[node name="RightFrontWheel" type="VehicleWheel3D" parent="." unique_id=112748405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.672, -1.0989182, 3.452)
+use_as_steering = true
+wheel_radius = 0.8
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RightFrontWheel" unique_id=1957536112]
+material = SubResource("StandardMaterial3D_a0tk4")
+
+[node name="LeftBackWheel" type="VehicleWheel3D" parent="." unique_id=239330945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.684, -1.0989182, -3.008)
+use_as_traction = true
+wheel_radius = 0.8
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LeftBackWheel" unique_id=1660570452]
+material = SubResource("StandardMaterial3D_a0tk4")
+
+[node name="LeftFrontWheel" type="VehicleWheel3D" parent="." unique_id=511868867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.684, -1.0989182, 3.452)
+use_as_steering = true
+wheel_radius = 0.8
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LeftFrontWheel" unique_id=1626679941]
+material = SubResource("StandardMaterial3D_a0tk4")
+
+[node name="RightBackWheel" type="VehicleWheel3D" parent="." unique_id=1315486532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.672, -1.0989182, -3.008)
+use_as_traction = true
+wheel_radius = 0.8
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RightBackWheel" unique_id=297538867]
+material = SubResource("StandardMaterial3D_a0tk4")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1010378614]
+collision_mask = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=470934803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5900817, -1.6975157)
+material = SubResource("StandardMaterial3D_k61xc")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D2" unique_id=974829135]
+transform = Transform3D(1, 0, 0, 0, 0.11667077, -0.99317044, 0, 0.99317044, 0.11667077, 0, 0.96852875, 0.48901916)
+radius = 0.62939453
+height = 2.3652344
+material = SubResource("StandardMaterial3D_k61xc")
+
+[node name="bulletSpawnPoint" type="Node3D" parent="CSGBox3D2/CSGCylinder3D" unique_id=1080114324]
+transform = Transform3D(1, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 0, 1.9954076, -0.24599409)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D2/CSGCylinder3D" unique_id=925355441]
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0.02518624, 1.2199484, -0.007648945)
+radius = 0.485
+height = 0.07922363
+material = SubResource("StandardMaterial3D_uoj53")
+
+[node name="PlayerTwo" type="Node3D" parent="." unique_id=623855311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6730243, 0.62089276, -4.187418)
+script = ExtResource("2_uoj53")
+
+[node name="PlayerTwoLeft" type="CSGBox3D" parent="PlayerTwo" unique_id=1407781673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3780065, 0.36292982, 1.2700872)
+size = Vector3(0.36315918, 1, 0.58154297)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="PlayerTwoLeftKick" type="CSGBox3D" parent="PlayerTwo/PlayerTwoLeft" unique_id=1563154109]
+transform = Transform3D(1, -0.00010922934, 0.00014023215, 0.00016994136, 0.35619265, -0.9344125, 5.2115607e-05, 0.9344125, 0.35619265, -0.000715971, -0.39704394, -0.80364776)
+size = Vector3(0.27416992, 1.6855469, 0.31445313)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="PlayerTwoMiddle" type="CSGBox3D" parent="PlayerTwo" unique_id=1817887895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6410367, 0.36292982, 0.3343978)
+size = Vector3(0.47851563, 1, 0.64453125)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="PlayerTwoMiddleKick" type="CSGBox3D" parent="PlayerTwo/PlayerTwoMiddle" unique_id=1885564226]
+transform = Transform3D(1, 0, 0, 0, 0.5712304, -0.8207898, 0, 0.8207898, 0.5712304, -0.11352539, -0.41934395, -0.4976554)
+size = Vector3(0.35009766, 1, 0.31445313)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="PlayerTwoRight" type="CSGBox3D" parent="PlayerTwo" unique_id=852541961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11471176, 0.36292982, 1.3133893)
+size = Vector3(0.3085327, 1, 0.5115967)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="PlayerTwoRightKick" type="CSGBox3D" parent="PlayerTwo/PlayerTwoRight" unique_id=1516562053]
+transform = Transform3D(1, -0.00010922934, 0.00014023215, 0.00016994136, 0.35619265, -0.9344125, 5.2115607e-05, 0.9344125, 0.35619265, -0.000715971, -0.39704394, -0.80364776)
+size = Vector3(0.27416992, 1.6855469, 0.31445313)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1348814072]
+
+[node name="Ammo Counter" type="RichTextLabel" parent="CanvasLayer" unique_id=1658989899]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -23.0
+offset_right = 200.0
+grow_vertical = 0
+text = "Ammo: 100"
+fit_content = true
+vertical_alignment = 2
+
+[node name="Raw Chicken Counter" type="RichTextLabel" parent="CanvasLayer" unique_id=1691136322]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -60.0
+offset_right = 201.0
+offset_bottom = -37.0
+grow_vertical = 0
+text = "Raw Chicken: 0"
+fit_content = true
+vertical_alignment = 2
+
+[node name="Raw Drumstick Counter" type="RichTextLabel" parent="CanvasLayer" unique_id=1571646440]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -40.0
+offset_right = 200.0
+offset_bottom = -17.0
+grow_vertical = 0
+text = "Raw Drumsticks: 0"
+fit_content = true
+vertical_alignment = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1313852590]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_right = 164.0
+offset_bottom = 80.0
+grow_horizontal = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=971488614]
+handle_input_locally = false
+size = Vector2i(330, 80)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1703233806 node_paths=PackedStringArray("mirrorPosition")]
+transform = Transform3D(0.99722034, 0, 0.074509256, -0.007408701, 0.99504423, 0.0991569, -0.074140005, -0.099433295, 0.99227834, 0, 5.1128573, -2.6362991)
+fov = 35.0
+script = ExtResource("4_06lh1")
+mirrorPosition = NodePath("../../../../CSGBox3D/CenterMirrorPosition")
+
+[node name="Zombies" type="Node3D" parent="." unique_id=271941716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69750667, 0)
+
+[node name="BloodLeftBack" type="GPUParticles3D" parent="Zombies" unique_id=2104212514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.034399, -0.5926292, -4.217819)
+cast_shadow = 0
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_w1ycj")
+draw_pass_1 = SubResource("BoxMesh_gmxvo")
+draw_skin = SubResource("Skin_jdgfv")
+
+[node name="ZombieLeftBack" type="CSGBox3D" parent="Zombies" unique_id=116345830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.034399, -0.5926292, -4.217819)
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="BloodMiddleBack" type="GPUParticles3D" parent="Zombies" unique_id=1323853044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.074471, -0.5926292, -4.217819)
+cast_shadow = 0
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_w1ycj")
+draw_pass_1 = SubResource("BoxMesh_gmxvo")
+draw_skin = SubResource("Skin_jdgfv")
+
+[node name="ZombieMiddleBack" type="CSGBox3D" parent="Zombies" unique_id=444712466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.074471, -0.5926292, -4.217819)
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="BloodRightBack" type="GPUParticles3D" parent="Zombies" unique_id=1710613159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.229415, -0.5926292, -4.217819)
+cast_shadow = 0
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_w1ycj")
+draw_pass_1 = SubResource("BoxMesh_gmxvo")
+draw_skin = SubResource("Skin_jdgfv")
+
+[node name="ZombieRightBack" type="CSGBox3D" parent="Zombies" unique_id=50091843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.229415, -0.5926292, -4.217819)
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="BloodLeftCenter" type="GPUParticles3D" parent="Zombies" unique_id=1529969980]
+transform = Transform3D(-0.011332154, 0, -0.999936, 0, 1, 0, 0.999936, 0, -0.011332154, 1.8072324, 0.73292947, -2.9137244)
+cast_shadow = 0
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_w1ycj")
+draw_pass_1 = SubResource("BoxMesh_gmxvo")
+draw_skin = SubResource("Skin_jdgfv")
+
+[node name="ZombieLeftCenter" type="CSGBox3D" parent="Zombies" unique_id=1411805572]
+transform = Transform3D(-0.011332154, 0, -0.999936, 0, 1, 0, 0.999936, 0, -0.011332154, 1.8072324, 0.73292947, -2.9137244)
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="BloodRightCenter" type="GPUParticles3D" parent="Zombies" unique_id=2095307236]
+transform = Transform3D(0.9993745, 0, -0.03536582, 0, 1, 0, 0.03536582, 0, 0.9993745, -1.7884238, 0.6181867, -2.5718703)
+cast_shadow = 0
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_w1ycj")
+draw_pass_1 = SubResource("BoxMesh_gmxvo")
+draw_skin = SubResource("Skin_jdgfv")
+
+[node name="ZombieRightCenter" type="CSGBox3D" parent="Zombies" unique_id=49531083]
+transform = Transform3D(0.9993745, 0, -0.03536582, 0, 1, 0, 0.03536582, 0, 0.9993745, -1.7884238, 0.6181867, -2.5718703)
+material = SubResource("StandardMaterial3D_gmxvo")

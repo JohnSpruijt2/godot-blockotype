@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ciwpg5265i25x"]
+
+[ext_resource type="PackedScene" uid="uid://b0vwtxk7tcdpf" path="res://car.tscn" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://lwph7i7cmqan" path="res://bullet.tscn" id="2_noarx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
+sky_top_color = Color(0.18638289, 0.49120325, 0.57727003, 1)
+sky_horizon_color = Color(1.06748, 0.9799596, 1.0299077, 1)
+ground_bottom_color = Color(1, 0.34509805, 0.45882353, 1)
+ground_horizon_color = Color(1.06748, 0.9799596, 1.0299077, 1)
+
+[sub_resource type="Sky" id="Sky_noarx"]
+sky_material = SubResource("ProceduralSkyMaterial_a202f")
+
+[sub_resource type="Environment" id="Environment_a0tk4"]
+background_mode = 2
+sky = SubResource("Sky_noarx")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+albedo_color = Color(1, 0.34509805, 0.45882353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noarx"]
+albedo_color = Color(0.14901961, 1, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=319701419]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1011523755]
+environment = SubResource("Environment_a0tk4")
+
+[node name="Node" type="Node" parent="." unique_id=473595992]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node" unique_id=570583197]
+use_collision = true
+size = Vector3(89.6272, 0.001, 80.569336)
+material = SubResource("StandardMaterial3D_a202f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1593413589]
+transform = Transform3D(0.8594238, 0.3474851, -0.37502635, 0, 0.7335281, 0.6796591, 0.5112638, -0.58411527, 0.6304115, 0, 20.339035, 20.015152)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1136381026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6042, 0.44164658, -0.2605095)
+use_collision = true
+size = Vector3(1, 1, 39.144775)
+material = SubResource("StandardMaterial3D_noarx")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1668069187]
+transform = Transform3D(0.018179445, 0, 0.9998347, 0, 1, 0, -0.9998347, 0, 0.018179445, -0.5734825, 0.64663696, -19.027699)
+use_collision = true
+size = Vector3(1, 1, 39.144775)
+material = SubResource("StandardMaterial3D_noarx")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=466426149]
+transform = Transform3D(0.020237928, 0, -0.9997952, 0, 1, 0, 0.9997952, 0, 0.020237928, -0.058286667, 0.9919529, 16.555882)
+use_collision = true
+size = Vector3(1, 1, 39.144775)
+material = SubResource("StandardMaterial3D_noarx")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1827471990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.911108, 0.47899246, -2.419632)
+use_collision = true
+size = Vector3(1, 1, 39.144775)
+material = SubResource("StandardMaterial3D_noarx")
+
+[node name="CameraPivot" type="Marker3D" parent="." unique_id=104728496]
+transform = Transform3D(1, 0, 0, 0, -0.5035507, 0.86396575, 0, -0.86396575, -0.5035507, 0, 22.134148, 14.099998)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1514047540]
+transform = Transform3D(1, 0, 0, 0, 0.20553586, -0.9786496, 0, 0.9786496, 0.20553586, -0.0070536137, -12.02075, -8.467964)
+
+[node name="Node2" parent="." unique_id=1151352100 instance=ExtResource("1_a202f")]
+
+[node name="Node3D" parent="." unique_id=1697603637 instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0280485, 6.418144)

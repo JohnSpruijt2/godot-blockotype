@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://drcffa1av6pne"]
+
+[ext_resource type="Script" uid="uid://c2g83e6ybikhi" path="res://zombie_spawner.gd" id="1_p4brw"]
+[ext_resource type="PackedScene" uid="uid://cbtrd2vaqnboa" path="res://zombie.tscn" id="2_hs14j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hs14j"]
+albedo_color = Color(1, 0, 0.3254902, 1)
+metallic = 1.0
+metallic_specular = 0.72
+
+[node name="ZombieSpawner" type="Node3D" unique_id=1668388957]
+script = ExtResource("1_p4brw")
+zombie = ExtResource("2_hs14j")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=492204628]
+size = Vector3(1, 0.044189453, 1)
+material = SubResource("StandardMaterial3D_hs14j")
+
+[node name="Timer" type="Timer" parent="." unique_id=1489128409]
+wait_time = 30.0
+
+[node name="Spawn Location" type="Node3D" parent="." unique_id=526175754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6588689, 0)

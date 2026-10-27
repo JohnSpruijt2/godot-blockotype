@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cbtrd2vaqnboa"]
+
+[ext_resource type="Script" uid="uid://b8a878f4i7xgn" path="res://zombie.gd" id="1_uiaus"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmxvo"]
+size = Vector3(1.2290039, 1.2913208, 1.2855835)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmxvo"]
+albedo_color = Color(1, 0, 0, 1)
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.15
+subsurf_scatter_skin_mode = true
+
+[node name="Zombie" type="Node3D" unique_id=388560661]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1520448135]
+script = ExtResource("1_uiaus")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=963996089]
+shape = SubResource("BoxShape3D_gmxvo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D" unique_id=472140480]
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D" unique_id=438464237]
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=1549225537]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1524246974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014892578, 0.47506714, -0.00033569336)
+shape = SubResource("BoxShape3D_gmxvo")
+
+[connection signal="body_entered" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]

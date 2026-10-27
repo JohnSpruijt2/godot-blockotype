@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bvsmlohceogq4"]
+
+[ext_resource type="Script" uid="uid://ccp8of2v2wach" path="res://ingredient.gd" id="1_1tfhg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmxvo"]
+albedo_color = Color(0.96862745, 0.8039216, 0.83137256, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdgfv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmxvo"]
+size = Vector3(2.0796509, 1.3310547, 1.7719727)
+
+[node name="Area3D" type="Area3D" unique_id=36417383]
+script = ExtResource("1_1tfhg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1460107911]
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=1899898386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4976275, 0.46105456, 0.22229004)
+size = Vector3(0.5743408, 0.5227661, 0.8479004)
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/CSGBox3D" unique_id=442846367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009179711, 0.0392043, 0.42348266)
+size = Vector3(0.14440918, 0.15441895, 0.4428711)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=2047474055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66183364, 0.46105456, 0.22229004)
+size = Vector3(0.5743408, 0.5227661, 0.8479004)
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/CSGBox3D2" unique_id=1507065203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009179711, 0.0392043, 0.42348266)
+size = Vector3(0.14440918, 0.15441895, 0.4428711)
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1802684232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06478882, 0.16552734, 0.051513672)
+shape = SubResource("BoxShape3D_gmxvo")

@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cgp4ajavf158g"]
+
+[ext_resource type="Script" uid="uid://b4w0yu4b03xun" path="res://Boss.gd" id="1_w3abr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3abr"]
+albedo_color = Color(0.94538563, 0.79996, 0.78707457, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwt41"]
+albedo_color = Color(1, 1, 0.5568628, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmxvo"]
+size = Vector3(3.140686, 5.9377136, 3.4552002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3abr"]
+size = Vector3(1.7906647, 0.9825287, 3.4552002)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4omny"]
+albedo_color = Color(1, 0.98333335, 0, 1)
+emission_enabled = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gmxvo"]
+height = 0.64260864
+radius = 1.8500977
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmxvo"]
+radius = 0.87060547
+height = 1.7412109
+
+[node name="BigBertha" type="Node3D" unique_id=1162571288]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1637062998]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_w3abr")
+movement_speed = 5.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D" unique_id=1333745531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.896, 0.9521786, 0.824)
+size = Vector3(2.7910156, 1.8947754, 3.7297363)
+material = SubResource("StandardMaterial3D_w3abr")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CharacterBody3D" unique_id=1556344554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89, 0.5935173, -1.967)
+size = Vector3(1.7976074, 1.2579346, 2.2684937)
+material = SubResource("StandardMaterial3D_w3abr")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CharacterBody3D" unique_id=907906989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8840332, 2.324091, 1.1437073)
+size = Vector3(2.2456055, 1, 2.3549194)
+material = SubResource("StandardMaterial3D_w3abr")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CharacterBody3D" unique_id=1889909020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.854398, 3.324091, 1.1234083)
+size = Vector3(1.411499, 1, 1.625412)
+material = SubResource("StandardMaterial3D_w3abr")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CharacterBody3D" unique_id=1636937508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72487724, 4.8144617, 1.2154942)
+size = Vector3(2.0781689, 2.0159912, 2.993674)
+material = SubResource("StandardMaterial3D_w3abr")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CharacterBody3D" unique_id=1742046296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53820646, 4.9824758, 1.4888041)
+size = Vector3(0.5703845, 2.6231995, 3.5402942)
+material = SubResource("StandardMaterial3D_qwt41")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CharacterBody3D" unique_id=1691643377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72487724, 5.9994297, 1.4892924)
+size = Vector3(2.0781689, 0.5685425, 3.5412707)
+material = SubResource("StandardMaterial3D_qwt41")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CharacterBody3D" unique_id=221765821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74016106, 5.0048466, -0.4286617)
+size = Vector3(2.871532, 2.5577087, 0.36719298)
+material = SubResource("StandardMaterial3D_qwt41")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CharacterBody3D" unique_id=1932922043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8335733, 4.9719777, 1.4285015)
+size = Vector3(0.5239477, 2.5699768, 3.4196887)
+material = SubResource("StandardMaterial3D_qwt41")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CharacterBody3D" unique_id=571036458]
+transform = Transform3D(0.82414734, -0.56637543, 0, 0.56637543, 0.82414734, 0, 0, 0, 1, -0.93720496, 2.3016558, 1.0782242)
+size = Vector3(2.324829, 1, 1.2881927)
+material = SubResource("StandardMaterial3D_w3abr")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CharacterBody3D" unique_id=93186493]
+transform = Transform3D(0.62218016, 0.78287405, 0, -0.78287405, 0.62218016, 0, 0, 0, 1, 2.4524708, 2.5127332, 1.0782242)
+size = Vector3(2.2091064, 1, 1.2881927)
+material = SubResource("StandardMaterial3D_w3abr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1092851045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84, 3.5105958, 1.228)
+shape = SubResource("BoxShape3D_gmxvo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D" unique_id=128907708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887, 0.7866301, -1.454)
+shape = SubResource("BoxShape3D_w3abr")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D" unique_id=1932054741]
+
+[node name="upAttackArea" type="CSGCylinder3D" parent="CharacterBody3D" unique_id=1928574644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8298529, 0.021108473, 4.327044)
+radius = 1.8339844
+height = 0.001
+sides = 16
+material = SubResource("StandardMaterial3D_4omny")
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D/upAttackArea" unique_id=1770379898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06315189, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/upAttackArea/Area3D" unique_id=1366200536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24870959, 0)
+shape = SubResource("CylinderShape3D_gmxvo")
+
+[node name="UpAttackTimer" type="Timer" parent="CharacterBody3D/upAttackArea" unique_id=1099789511]
+wait_time = 30.0
+one_shot = true
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2131943349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9017574, 0.8712451, 1.3489745)
+shape = SubResource("CapsuleShape3D_gmxvo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=696992911]
+
+[node name="BossHealth" type="RichTextLabel" parent="CanvasLayer" unique_id=124405803]
+offset_right = 198.0
+offset_bottom = 80.0
+text = "Boss: 100"
+fit_content = true
+
+[connection signal="body_entered" from="CharacterBody3D/upAttackArea/Area3D" to="CharacterBody3D" method="_on_attack_area_entered"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dgllilmyqiyt7"]
+
+[ext_resource type="Script" uid="uid://bt1ekw2dhp6o3" path="res://playertest.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[node name="Node" type="Node" unique_id=493767130]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1749636198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1216239, 0)
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1085782605]
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[node name="Pivot" type="Node3D" parent="CharacterBody3D" unique_id=962562222]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CharacterBody3D/Pivot" unique_id=1267218947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.018224359, 0)

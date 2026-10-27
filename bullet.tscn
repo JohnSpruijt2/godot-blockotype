@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://lwph7i7cmqan"]
+
+[ext_resource type="Script" uid="uid://cpengqi6px31w" path="res://bullet.gd" id="1_v7oki"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_titi6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmxvo"]
+albedo_color = Color(0.57767403, 0.34551153, 0.10421447, 1)
+albedo_texture = SubResource("NoiseTexture2D_titi6")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdgfv"]
+albedo_color = Color(1, 1, 0.83137256, 1)
+roughness = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmxvo"]
+size = Vector3(3.5439453, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdgfv"]
+size = Vector3(6.6572266, 2.5629883, 3.406128)
+
+[node name="Node3D" type="Node3D" unique_id=1697603637]
+script = ExtResource("1_v7oki")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=938282940]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="RigidBody3D" unique_id=731049974]
+transform = Transform3D(0.8, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+calculate_tangents = false
+radius = 1.9025495
+material = SubResource("StandardMaterial3D_gmxvo")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="RigidBody3D" unique_id=1593684462]
+transform = Transform3D(-1.7484554e-08, -0.39999998, 0, 0.39999998, -1.7484554e-08, 0, 0, 0, 0.4, 1.8625408, 0.12858225, -0.0016267777)
+height = 3.6948242
+material = SubResource("StandardMaterial3D_jdgfv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=2125628565]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.9384766, 0, 0)
+shape = SubResource("BoxShape3D_gmxvo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" unique_id=2032366545]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.111, 0, 0.088)
+shape = SubResource("BoxShape3D_jdgfv")
+
+[node name="Timer" type="Timer" parent="." unique_id=554396191]
+wait_time = 30.0
+autostart = true
+
+[connection signal="body_entered" from="RigidBody3D" to="." method="_on_rigid_body_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
